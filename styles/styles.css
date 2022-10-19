@@ -1,0 +1,129 @@
+
+body {
+  font-family: "Nunito Sans", Helvetica, Arial, sans-serif;
+  margin: 0;
+  cursor: default;
+}
+
+.page2 {
+  background-color: #131313;
+  width: 100vw;
+  height: 100vh;
+  height: 783px;
+}
+
+.page2-container {
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.page2-navigation {
+  margin: 0;
+  padding: 107px 0px 0px 432px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+.page2-navigation_item {
+  font-family: 'Yeseva One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  padding-bottom: 6px;
+  margin-left: 60px;
+}
+
+/* .page2-navigation_item:hover {
+  color: #E3B873;
+  border-bottom: 1px solid;
+} */
+
+.active {
+  color: #E3B873;
+  border-bottom: 1px solid;
+}
+
+.completed-projects_text {
+  margin: 0;
+  padding: 0;
+}
+
+.completed-projects_header {
+  margin-top: 47px;
+  margin-bottom: 24px;
+  font-family: 'Yeseva One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 37px;
+  letter-spacing: -0.07em;
+  text-transform: uppercase;
+  color: #E3B873;
+}
+
+.completed-projects_photo {
+  float: right;
+  margin: 50px 0px 0px 0px;
+}
+
+.completed-projects_description {
+  margin-bottom: 47px;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 27px;
+  color: #FFFFFF;
+}
+
+.completed-projects_table td {
+  width: 185px;
+  height: 31px;
+  padding: 0;
+  vertical-align: top;
+}
+
+.completed-projects_table thead {
+  font-family: 'Yeseva One';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+  color: #E3B873;
+  
+}
+
+.completed-projects_table tbody {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+
+.completed-projects_table {
+  margin-bottom: 28px;
+}
+
+.left-arrow {
+  margin: 43px 29px 0px 0px;
+  cursor: pointer;
+}
+
+.right-arrow {
+  margin: 43px 25px 0px 12px;
+  cursor: pointer;
+}
+
+.dots {
+  margin-right: 17px;
+  cursor: pointer;
+}
+

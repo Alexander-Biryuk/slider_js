@@ -1,19 +1,27 @@
-const slides = [{ city: 'Rostov-on-Don <br>LCD admiral', 
-                  area: '81 m2',
-                  repairTime: '3.5 months',
-                  image: './images/image2_1.jpg'}, 
+const slides = [
+  {
+    city: 'Rostov-on-Don <br>LCD admiral',
+    area: '81 m2',
+    repairTime: '3.5 months',
+  },
 
-                { city: 'Sochi <br>Thieves', 
-                  area: '105 m2',
-                  repairTime: '4 months',
-                  image: './images/image2_2.jpg'}, 
+  {
+    city: 'Sochi <br>Thieves',
+    area: '105 m2',
+    repairTime: '4 months',
+  },
 
-                { city: 'Rostov-on-Don <br>Patriotic', 
-                  area: '93 m2',
-                  repairTime: '3 months',
-                  image: './images/image2_3.jpg'}];
+  {
+    city: 'Rostov-on-Don <br>Patriotic',
+    area: '93 m2',
+    repairTime: '3 months',
+  },
+];
 
-const slideBox = document.querySelector('.completed-projects_photo');
+const mainSlide = document.querySelector('.main-slide');
+const slidesNumber = mainSlide.querySelectorAll('img').length;
+mainSlide.style.width = `${679 * slidesNumber}px`;
+console.log('slidesNumber', slidesNumber);
 
 const nav = document.querySelectorAll('.page2-navigation_item');
 
@@ -28,49 +36,86 @@ const repairTime = document.querySelector('.repair-time');
 
 let slideNumber = 0;
 
-nav.forEach((item, index) => item.addEventListener('click', (event) => {
-  event.preventDefault();
-  slideNumber = index;
-  setSlide(slideNumber);
-}));
+nav.forEach((item, index) =>
+  item.addEventListener('click', (event) => {
+    event.preventDefault();
+    slideNumber = index;
+    changeSlide(slideNumber);
+  })
+);
 
-dots.forEach((item, index) => item.addEventListener('click', (event) => {
-  event.preventDefault();
-  slideNumber = index;
-  setSlide(slideNumber);
-}));
+dots.forEach((item, index) =>
+  item.addEventListener('click', (event) => {
+    event.preventDefault();
+    slideNumber = index;
+    changeSlide(slideNumber);
+  })
+);
 
 rightArrow.addEventListener('click', (event) => {
-  event.preventDefault();
-  slideNumber = slideNumber > 1 ? 0 : slideNumber += 1;
-  setSlide(slideNumber);
+  slideNumber++;
+  changeSlide('right');
 });
 
 leftArrow.addEventListener('click', (event) => {
-  event.preventDefault();
-  slideNumber = slideNumber < 1 ? 2 : slideNumber -= 1;
-  setSlide(slideNumber);
+  slideNumber--;
+  changeSlide('left');
 });
-// функция смены слайда
-function setSlide(number) {
-  slideBox.setAttribute('src', slides[number].image);
-  city.innerHTML = slides[number].city;
-  area.innerHTML = slides[number].area;
-  repairTime.innerHTML = slides[number].repairTime;
-  makeNavItemActive(number);
-  makeDotActive(number);
-};
+
 // функция выделения активной точи
 function makeDotActive(dotNumber) {
   dots[dotNumber].setAttribute('src', './images/Dot_light.svg');
-  dots.forEach((item, index) => { // убрать подсветку с неактивных точек
+  dots.forEach((item, index) => {
+    // убрать подсветку с неактивных точек
     if (index !== dotNumber) item.setAttribute('src', './images/Dot_dark.svg');
   });
-};
+}
 // функция выделения элемента меню
 function makeNavItemActive(number) {
   nav[number].classList.add('active');
-  nav.forEach((item, index) => { // убрать подсветку с неактивных элементов
+  nav.forEach((item, index) => {
+    // убрать подсветку с неактивных элементов
     if (index !== number) item.classList.remove('active');
   });
+}
+
+function changeSlide(direction) {
+  if (direction === 'right') {
+    if (slideNumber === slidesNumber) {
+      slideNumber = 0;
+      mainSlide.style.transition = 'unset';
+      setTimeout(() => {
+        slideNumber = 1;
+        mainSlide.style.transition = 'transform 0.5s ease-in-out';
+        mainSlide.style.transform = `translateX(-${slideNumber * 679}px)`;
+        fillInfo(slideNumber);
+      }, 0);
+      slideNumber = 0;
+    }
+  } else if (direction === 'left') {
+    if (slideNumber < 0) {
+      slideNumber = slidesNumber - 1;
+      mainSlide.style.transition = 'unset';
+      setTimeout(() => {
+        slideNumber = slidesNumber - 2;
+        mainSlide.style.transition = 'transform 0.5s ease-in-out';
+        mainSlide.style.transform = `translateX(-${slideNumber * 679}px)`;
+        fillInfo(slideNumber);
+      }, 0);
+    }
+  }
+  if (slideNumber !== slidesNumber - 1) {
+    fillInfo(slideNumber);
+  } else {
+    fillInfo(0);
+  }
+  mainSlide.style.transform = `translateX(-${slideNumber * 679}px)`;
+}
+
+function fillInfo(slideNumber) {
+  makeNavItemActive(slideNumber);
+  makeDotActive(slideNumber);
+  city.innerHTML = slides[slideNumber].city;
+  area.innerHTML = slides[slideNumber].area;
+  repairTime.innerHTML = slides[slideNumber].repairTime;
 }

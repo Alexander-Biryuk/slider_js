@@ -1,73 +1,116 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital@0;1&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
-  <script defer src="./scripts/script.js"></script>
-  <title>Slider</title>
-</head>
-<body>
-  <main>
-    <section class="page2">
-      <div class="page2-container">
-        <nav>
-          <ul class="page2-navigation">
-            <li><a class="page2-navigation_item active" href="#">Rostov-on-Don, Admiral</a></li>
-            <li><a class="page2-navigation_item" href="#">Sochi Thieves</a></li>
-            <li><a class="page2-navigation_item" href="#">Rostov-on-Don Patriotic</a></li>
-          </ul>
-        </nav>
-        <img class="completed-projects_photo" src="./images/image2_1.jpg" alt="completed projects photo">
-        <aside>
-          <h2 class="completed-projects_header">
-            Completed <br>projects
-          </h2>
-          <p class="completed-projects_description">
-            Only a small part of the work performed by our company is presented <br>on the site. 
-            For 14 years on in the construction <br>market we have made happy more than 1000 families
-          </p>
-          <table class="completed-projects_table">
-            <thead>
-              <tr>
-                <td>City:</td>
-                <td>Apartment area:</td>
-              </tr>
-            </thead> 
-            <tbody>
-              <tr>
-                <td class="city">Rostov-on-Don <br>LCD admiral</td>
-                <td class="area">81 m2</td>
-              </tr>
-            </tbody>
-          </table>
-          <table class="completed-projects_table">
-            <thead>
-              <tr>
-                <td>Repair time:</td>
-                <td>Repair Cost:</td>
-              </tr>
-            </thead> 
-            <tbody>
-              <tr>
-                <td class="repair-time">3.5 months</td>
-                <td>Upon request</td>
-              </tr>
-            </tbody>
-          </table>
-          <img class="left-arrow" src="./images/Left_arrow.svg" alt="left arrow">
-          <img class="dots left-dot" src="./images/Dot_light.svg" alt="3 dots">
-          <img class="dots center-dot" src="./images/Dot_dark.svg" alt="3 dots">
-          <img class="dots right-dot" src="./images/Dot_dark.svg" alt="3 dots">
-          <img class="right-arrow" src="./images/right_arrow.svg" alt="right arrow">
-        </aside>
-      </div>
-    </section>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./scripts/script.js"></script>
+    <title>Slider</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="page2">
+        <div class="page2-container">
+          <nav>
+            <ul class="page2-navigation">
+              <li>
+                <a class="page2-navigation_item active" href="#"
+                  >Rostov-on-Don, Admiral</a
+                >
+              </li>
+              <li>
+                <a class="page2-navigation_item" href="#">Sochi Thieves</a>
+              </li>
+              <li>
+                <a class="page2-navigation_item" href="#"
+                  >Rostov-on-Don Patriotic</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="slide-container">
+            <div class="main-slide">
+              <img src="./images/image2_1.jpg" alt="" class="images">
+              <img src="./images/image2_2.jpg" alt="" class="images">
+              <img src="./images/image2_3.jpg" alt="" class="images">
+              <img src="./images/image2_1.jpg" alt="" class="images">
+            </div>
+          </div>
+          <aside>
+            <h2 class="completed-projects_header">Completed <br />projects</h2>
+            <p class="completed-projects_description">
+              Only a small part of the work performed by our company is
+              presented <br />on the site. For 14 years on in the construction
+              <br />market we have made happy more than 1000 families
+            </p>
+            <table class="completed-projects_table">
+              <thead>
+                <tr>
+                  <td>City:</td>
+                  <td>Apartment area:</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="city">Rostov-on-Don <br />LCD admiral</td>
+                  <td class="area">81 m2</td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="completed-projects_table">
+              <thead>
+                <tr>
+                  <td>Repair time:</td>
+                  <td>Repair Cost:</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="repair-time">3.5 months</td>
+                  <td>Upon request</td>
+                </tr>
+              </tbody>
+            </table>
+            <img
+              class="left-arrow"
+              src="./images/Left_arrow.svg"
+              alt="left arrow"
+            />
+            <img
+              class="dots left-dot"
+              src="./images/Dot_light.svg"
+              alt="3 dots"
+            />
+            <img
+              class="dots center-dot"
+              src="./images/Dot_dark.svg"
+              alt="3 dots"
+            />
+            <img
+              class="dots right-dot"
+              src="./images/Dot_dark.svg"
+              alt="3 dots"
+            />
+            <img
+              class="right-arrow"
+              src="./images/right_arrow.svg"
+              alt="right arrow"
+            />
+          </aside>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

@@ -21,7 +21,6 @@ const slides = [
 const mainSlide = document.querySelector('.main-slide');
 const slidesNumber = mainSlide.querySelectorAll('img').length;
 mainSlide.style.width = `${679 * slidesNumber}px`;
-console.log('slidesNumber', slidesNumber);
 
 const nav = document.querySelectorAll('.page2-navigation_item');
 
@@ -60,6 +59,16 @@ rightArrow.addEventListener('click', (event) => {
 leftArrow.addEventListener('click', (event) => {
   slideNumber--;
   changeSlide('left');
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowRight') {
+    slideNumber++;
+    changeSlide('right');
+  } else if (event.key === 'ArrowLeft') {
+    slideNumber--;
+    changeSlide('left');
+  }
 });
 
 // функция выделения активной точи

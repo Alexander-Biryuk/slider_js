@@ -36,10 +36,10 @@ body {
   margin-left: 60px;
 }
 
-/* .page2-navigation_item:hover {
-  color: #E3B873;
+.page2-navigation_item:hover {
+  /* color: #E3B873; */
   border-bottom: 1px solid;
-} */
+}
 
 .active {
   color: #e3b873;
